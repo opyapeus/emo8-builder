@@ -4,14 +4,14 @@ A convenient build tool for creating [NEMO](https://github.com/opyapeus/purescri
 
 ## Setup
 
-Requirement: `yarn`
+Requirements: `yarn`, `bower`
 
 ```sh
 yarn
 ```
 
 ```sh
-bower install
+bower i
 ```
 
 ## Development
