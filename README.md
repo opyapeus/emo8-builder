@@ -2,6 +2,8 @@
 
 A convenient build tool for creating [EMO8](https://github.com/opyapeus/purescript-emo8) games.
 
+![demo](demo.gif)
+
 ## Setup
 
 Requirement: `yarn`
