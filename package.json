@@ -1,19 +1,28 @@
 {
   "private": true,
+  "scripts": {
+    "postinstall": "bower install",
+    "clean:output": "rimraf output",
+    "clean:dist": "rimraf dist",
+    "clean": "npm-run-all clean:*",
+    "build:js": "pulp build --to dist/app.js",
+    "build:endpoint": "cpx 'endpoint/*' dist",
+    "build": "npm-run-all build:*",
+    "watch": "pulp --watch build --to dist/app.js",
+    "watch-fast": "webpack --mode=development --entry ./dev-entry.js --output-path ./dist --output-filename app.js --progress --watch",
+    "sync-server": "browser-sync start --server ./dist --files ./dist/app.js",
+    "dev": "npm-run-all -s build -p watch-fast sync-server",
+    "test": "pulp test"
+  },
   "devDependencies": {
+    "bower": "^1.8.8",
     "browser-sync": "^2.26.3",
+    "cpx": "^1.5.0",
     "npm-run-all": "^4.1.3",
     "pulp": "^12.3.0",
     "purescript": "^0.12.1",
+    "rimraf": "^2.6.2",
     "webpack": "^4.25.1",
     "webpack-cli": "^3.1.2"
-  },
-  "scripts": {
-    "build": "pulp build --to dist/js/main.js",
-    "watch": "pulp --watch build --to dist/js/main.js",
-    "watch-fast": "webpack --mode=development --entry ./dev-entry.js --output-path ./dist/js --output-filename main.js --progress --watch",
-    "sync-server": "browser-sync start --server ./dist --files ./dist/js/main.js",
-    "dev": "npm-run-all -s build -p watch-fast sync-server",
-    "test": "pulp test"
   }
 }

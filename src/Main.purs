@@ -3,8 +3,8 @@ module Main where
 import Prelude
 
 import Effect (Effect)
-import Nemo (nemo)
-import Lib.Game (asset, initialState)
+import Emo8 (emo8)
+import Lib.Game (asset, initialState, monitorSize)
 
 main :: Effect Unit
-main = nemo initialState asset
+main = emo8 initialState asset monitorSize

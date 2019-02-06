@@ -3,13 +3,11 @@ module DevMain where
 import Prelude
 
 import Effect (Effect)
-import Nemo (nemoDev)
-import Nemo.Types (DebugConfig)
-import Nemo.Utils (defaultDebugConfig)
-import Lib.Game (asset, initialState)
+import Emo8 (emo8Dev)
+import Emo8.Class.GameDev (loadStateWithDefault)
+import Lib.Game (asset, initialState, localKey, monitorSize)
 
 main :: Effect Unit
-main = nemoDev initialState asset config
-
-config :: DebugConfig
-config = defaultDebugConfig
+main = do
+    s <- loadStateWithDefault initialState localKey
+    emo8Dev s asset monitorSize

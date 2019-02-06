@@ -1,17 +1,17 @@
-# NEMO BUILDER
+# EMO8 Builder
 
-A convenient build tool for creating [NEMO](https://github.com/opyapeus/purescript-nemo) games.
+A convenient build tool for creating [EMO8](https://github.com/opyapeus/purescript-emo8) games.
 
 ## Setup
 
-Requirements: `yarn`, `bower`
+Requirement: `yarn`
 
 ```sh
 yarn
 ```
 
 ```sh
-bower i
+yarn postinstall
 ```
 
 ## Development
@@ -20,7 +20,8 @@ bower i
 yarn dev
 ```
 
-Browsersync server runs on http://localhost:3000/
+- Development files are generated to dist directory
+- Browsersync server runs on http://localhost:3000/
 
 ## Production
 
@@ -28,4 +29,4 @@ Browsersync server runs on http://localhost:3000/
 yarn build
 ```
 
-Production files are generated in `dist` directory.
+- Production files are generated to dist directory
